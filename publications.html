@@ -379,7 +379,7 @@
 </head>
 <body>
     <!-- 言語切り替えボタン（アナログ時計） -->
-    <button class="lang-toggle en" id="langToggle" onclick="toggleLanguage()">
+    <button class="lang-toggle en" id="langToggle">
         <div class="clock-hand hour-hand" id="hourHand"></div>
         <div class="clock-hand minute-hand" id="minuteHand"></div>
         <div class="clock-hand second-hand" id="secondHand"></div>
@@ -387,7 +387,7 @@
     </button>
 
     <!-- カレンダー -->
-    <div class="calendar" id="calendar" onclick="toggleSocial()">
+    <div class="calendar" id="calendar">
         <div class="calendar-date" id="calendarDate"></div>
         <div class="calendar-month-year" id="calendarMonthYear"></div>
         <div class="calendar-day" id="calendarDay"></div>
@@ -448,7 +448,8 @@
                         Establishing a sustainable life-support system for space exploration is a formidable challenge due to the vast distances, high costs, and environmental differences from Earth. Building upon the lessons from the Biosphere 2 experiment, we introduce the novel "Ecosphere" and "Biosealed" systems, self-sustaining ecosystems within customizable, enclosed containers. These systems incorporate terrestrial ecosystems and groundwater layers, offering a potential model for transplanting Earth-like biomes to extraterrestrial environments. Over 4 years, we conducted rigorous experiments and analyses to understand the dynamics of these enclosed ecosystems.
                     </div>
                 </div>
-                
+            </div>
+            
             <div class="main-content">
                 <div class="section-title">Media</div>
 
@@ -524,7 +525,7 @@
                 <!-- ここに追加の論文を記載 -->
             </div>
             
-　　　　　　　　<div class="main-content">
+            <div class="main-content">
                 <div class="section-title">メディア</div>
 
                 <div class="publication-item">
@@ -552,7 +553,7 @@
                 <div class="publication-item">
                     <div class="publication-title">
                         <a href="https://ed.lne.st/download/15713/?tmstv=1677224002&_gl=1*1g2t5m5*_ga*MjM3NjEwOTI5LjE3MzkzNjE5NzM.*_ga_6X6LJ0BL7J*MTc0MDI4NTY2OS40LjEuMTc0MDI4ODE1MS4wLjAuMA.." target="_blank">
-                            第二の地球をつくる。 地上の生態系をビンの中に再現！
+                            『第二の地球をつくる。 地上の生態系をビンの中に再現！』
                         </a>
                     </div>
                     <div class="publication-journal">
@@ -687,12 +688,19 @@
             }
         }
 
+        // ページ読み込み時の初期化
         window.addEventListener('DOMContentLoaded', function() {
             const savedLang = localStorage.getItem('language') || 'en';
             updateLanguage(savedLang);
             updateClock();
             updateCalendar();
             setInterval(updateClock, 1000);
+            
+            // 時計ボタンにクリックイベントを追加
+            document.getElementById('langToggle').addEventListener('click', toggleLanguage);
+            
+            // カレンダーにクリックイベントを追加
+            document.getElementById('calendar').addEventListener('click', toggleSocial);
         });
     </script>
 </body>
