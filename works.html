@@ -96,7 +96,7 @@
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 20px;
         }
@@ -104,6 +104,8 @@
         .work-item {
             cursor: pointer;
             transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
         .work-item:hover {
@@ -116,6 +118,7 @@
             background: rgba(255, 255, 255, 0.1);
             object-fit: cover;
             display: block;
+            border-radius: 4px;
         }
 
         .work-title {
@@ -123,6 +126,7 @@
             font-weight: 300;
             margin-top: 10px;
             font-size: 16px;
+            line-height: 1.4;
         }
 
         .work-year {
@@ -287,6 +291,7 @@
 
             .gallery {
                 grid-template-columns: 1fr;
+                gap: 25px;
             }
 
             .lang-toggle {
@@ -297,6 +302,12 @@
             .calendar, .social-icons {
                 bottom: 20px;
                 left: 20px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -367,13 +378,12 @@
                     <div class="work-year">2025</div>
                 </div>
                 <div class="work-item" onclick="window.location.href='#'">
-                    <div class="work-item" onclick="window.location.href='#'">
                     <div class="work-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
                     <div class="work-title">Coming Soon(DRC)</div>
                     <div class="work-year">2025</div>
                 </div>
-                    <div class="work-item" onclick="window.open('https://www.yomiuri.co.jp/kyoiku/kyoiku/news/20250621-OYT1T50061/', '_blank')">
-                    <img src="https://www.sfc.keio.ac.jp/images/IMG_8846.JPG" alt="Sealed Mini-Ecosystems" class="work-image" style="object-fit: cover;">
+                <div class="work-item" onclick="window.open('https://www.yomiuri.co.jp/kyoiku/kyoiku/news/20250621-OYT1T50061/', '_blank')">
+                    <img src="https://www.sfc.keio.ac.jp/images/IMG_8846.JPG" alt="Sealed Mini-Ecosystems" class="work-image">
                     <div class="work-title">Evaluating Biodiversity Impacts of Goat Keeping at H Village (SFC)</div>
                     <div class="work-year">2025</div>
                 </div>
@@ -383,13 +393,13 @@
                     <div class="work-year">2023</div>
                 </div>
                 <div class="work-item" onclick="window.open('https://www.nature.com/articles/s41598-024-75328-x', '_blank')">
-                    <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-024-75328-x/MediaObjects/41598_2024_75328_Fig1_HTML.png?as=webp" alt="Sealed Mini-Ecosystems" class="work-image" style="object-fit: cover;">
+                    <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-024-75328-x/MediaObjects/41598_2024_75328_Fig1_HTML.png?as=webp" alt="Plant Cultivation" class="work-image">
                     <div class="work-title">Plant Cultivation Experiments Using Simulated Lunar and Ryugu Regolith</div>
                     <div class="work-year">2022</div>
                 </div>
                 <div class="work-item" onclick="window.open('https://www.nature.com/articles/s41598-024-75328-x', '_blank')">
-                    <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-024-75328-x/MediaObjects/41598_2024_75328_Fig1_HTML.png?as=webp" alt="Sealed Mini-Ecosystems" class="work-image" style="object-fit: cover;">
-                    <div class="work-title">Sealed Mini-Ecosystems - Ecosphere1,Ecosphere2,Biosealed </div>
+                    <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-024-75328-x/MediaObjects/41598_2024_75328_Fig1_HTML.png?as=webp" alt="Sealed Mini-Ecosystems" class="work-image">
+                    <div class="work-title">Sealed Mini-Ecosystems - Ecosphere1, Ecosphere2, Biosealed</div>
                     <div class="work-year">2019-2024</div>
                 </div>
             </div>
@@ -427,8 +437,8 @@
                     <div class="work-title">Coming Soon(DRC)</div>
                     <div class="work-year">2025</div>
                 </div>
-                    <div class="work-item" onclick="window.open('https://www.yomiuri.co.jp/kyoiku/kyoiku/news/20250621-OYT1T50061/', '_blank')">
-                    <img src="https://www.sfc.keio.ac.jp/images/IMG_8846.JPG" alt="Sealed Mini-Ecosystems" class="work-image" style="object-fit: cover;">
+                <div class="work-item" onclick="window.open('https://www.yomiuri.co.jp/kyoiku/kyoiku/news/20250621-OYT1T50061/', '_blank')">
+                    <img src="https://www.sfc.keio.ac.jp/images/IMG_8846.JPG" alt="Sealed Mini-Ecosystems" class="work-image">
                     <div class="work-title">H Villageにおけるヤギ飼育がSFC周辺地域の生物由来遺伝子資源の多様性に与える影響の定量評価</div>
                     <div class="work-year">2025</div>
                 </div>
@@ -436,15 +446,15 @@
                     <div class="work-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
                     <div class="work-title">可溶性月面コンクリート - Boncrete</div>
                     <div class="work-year">2023</div>
-    　　         </div>
+                </div>
                 <div class="work-item" onclick="window.open('https://www.nature.com/articles/s41598-024-75328-x', '_blank')">
-                    <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-024-75328-x/MediaObjects/41598_2024_75328_Fig1_HTML.png?as=webp" alt="Sealed Mini-Ecosystems" class="work-image" style="object-fit: cover;">
+                    <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-024-75328-x/MediaObjects/41598_2024_75328_Fig1_HTML.png?as=webp" alt="Plant Cultivation" class="work-image">
                     <div class="work-title">月模擬土壌・リュウグウ模擬土壌環境下における植物栽培</div>
                     <div class="work-year">2022</div>
                 </div>
                 <div class="work-item" onclick="window.open('https://www.nature.com/articles/s41598-024-75328-x', '_blank')">
-                    <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-024-75328-x/MediaObjects/41598_2024_75328_Fig1_HTML.png?as=webp" alt="Sealed Mini-Ecosystems" class="work-image" style="object-fit: cover;">
-                    <div class="work-title">ミニ閉鎖生態系 - Ecosphere1,Ecosphere2,Biosealed</div>
+                    <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-024-75328-x/MediaObjects/41598_2024_75328_Fig1_HTML.png?as=webp" alt="Sealed Mini-Ecosystems" class="work-image">
+                    <div class="work-title">ミニ閉鎖生態系 - Ecosphere1, Ecosphere2, Biosealed</div>
                     <div class="work-year">2019-2024</div>
                 </div>
             </div>
