@@ -452,7 +452,7 @@
                     Feel free to reach out for collaborations, questions, or just to say hello.
                 </p>
 
-                <form class="contact-form" id="contact-form-en" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <form class="contact-form" id="contact-form-en" action="mailto:sato.mb@keio.jp" method="POST" enctype="text/plain">
                     <div class="form-group">
                         <label for="name-en">Name</label>
                         <input type="text" id="name-en" name="name" placeholder="Your name" required>
@@ -502,7 +502,7 @@
                     コラボレーション，ご質問，ご挨拶など，お気軽にご連絡ください．
                 </p>
 
-                <form class="contact-form" id="contact-form-ja" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <form class="contact-form" id="contact-form-ja" action="mailto:sato.mb@keio.jp" method="POST" enctype="text/plain">
                     <div class="form-group">
                         <label for="name-ja">お名前</label>
                         <input type="text" id="name-ja" name="name" placeholder="お名前を入力してください" required>
@@ -658,35 +658,10 @@
             }
         }
 
-        // フォーム送信処理
+        // フォーム送信処理（mailto用に簡略化）
         function handleFormSubmit(event, lang) {
-            event.preventDefault();
-            
-            const form = event.target;
-            const formData = new FormData(form);
-            
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    form.reset();
-                    document.getElementById('success-' + lang).style.display = 'block';
-                    document.getElementById('error-' + lang).style.display = 'none';
-                    setTimeout(() => {
-                        document.getElementById('success-' + lang).style.display = 'none';
-                    }, 5000);
-                } else {
-                    document.getElementById('error-' + lang).style.display = 'block';
-                    document.getElementById('success-' + lang).style.display = 'none';
-                }
-            }).catch(error => {
-                document.getElementById('error-' + lang).style.display = 'block';
-                document.getElementById('success-' + lang).style.display = 'none';
-            });
+            // mailto:では通常のフォーム送信処理は不要
+            // ブラウザがメールクライアントを開く
         }
 
         window.addEventListener('DOMContentLoaded', function() {
